@@ -1,15 +1,15 @@
 def add(num_a, num_b)
-	num_a + num_b
+num_a + num_b
 end
 
 def subtract(num_a, num_b)
-	num_a - num_b
+num_a - num_b
 end
 
 def sum(array)
-	sum = 0
-	array.each{|num| sum += num}
-	sum
+sum = 0
+array.each{|num| sum += num}
+sum
 end
 
 def multiply(num_a,num_b)
