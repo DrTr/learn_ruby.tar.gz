@@ -63,5 +63,19 @@ describe "#translate" do
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
+  it "leaves word capitalized" do
+    s = translate("Chuck")
+    s.should == "Uckchay"
+  end 
 
+  it "retain the comma" do
+    s = translate("hello, world")
+    s.should == "ellohay, orldway"
+  end  
+  
+  it "retain the dash" do
+    s = translate("life - good")
+    s.should == "ifelay - oodgay"
+  end 
+  
 end
