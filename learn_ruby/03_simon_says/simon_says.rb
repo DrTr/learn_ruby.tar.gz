@@ -1,4 +1,4 @@
-LITTLE_WORDS = ['the','a','to','and','or','on','not','of','in','over']
+LITTLE_WORDS = ['the','a','an','to','and','or','on','not','of','in','over']
 
 def echo(word)
   word  
