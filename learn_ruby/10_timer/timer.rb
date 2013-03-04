@@ -1,22 +1,21 @@
 require "time"
 
 class Timer
+  
+  attr_accessor :seconds
+  
   def initialize
-    @time = 0  
+    @seconds = 0  
   end
   
   def seconds=(interval)
-    @time = interval
-  end
-      
-  def seconds
-    @time
+    @seconds = interval
   end
       
   def time_string
-    hours = @time / 3600
-    minutes = @time % 3600 / 60
-    seconds = @time % 60
+    hours = @seconds / 3600
+    minutes = @seconds % 3600 / 60
+    seconds = @seconds % 60
     "%02d:%02d:%02d" % [hours, minutes, seconds]
   end
   
