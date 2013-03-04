@@ -7,9 +7,7 @@ def subtract(num_a, num_b)
 end
 
 def sum(array)
-  sum = 0
-  array.each{|num| sum += num}
-  sum
+  return array.size == 0 ? 0 : array.inject(:+)
 end
 
 def multiply(num_a,num_b)
