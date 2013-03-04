@@ -1,18 +1,13 @@
 class Book
   @@LITTLE_WORDS = ['the','a','an','to','and','or','on','not','of','in','over']
   
+  attr_reader :title
+  
   def title=(text)
-    words = text.split
-    words[0].capitalize!
-    @title = words[0] + " "
-    for word in 1...words.size do
-      words[word].capitalize! unless @@LITTLE_WORDS.include? words[word]
-      title << words[word] << " "
-    end
-    @title.strip!
+    @title = text.split.each do |word|
+       word.capitalize! unless @@LITTLE_WORDS.include? word
+    end.join(" ")
+    @title[0] = @title[0].upcase
   end
 
-  def title
-    @title
-  end
 end
