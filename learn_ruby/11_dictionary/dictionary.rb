@@ -1,35 +1,33 @@
 class Dictionary 
+  attr_reader :entries 
+
   def initialize
-    @data = {}
-  end
-  
-  def entries
-    @data
+    @entries = {}
   end
   
   def add(arg = {})
     if arg.is_a? Hash 
-      @data.merge!(arg)
+      @entries.merge!(arg)
     else
-      @data[arg] = nil
+      @entries[arg] = nil
     end
   end
   
   def keywords
-    @data.keys.sort
+    @entries.keys.sort
   end
   
   def include?(key)
-    @data.include? key 
+    @entries.include? key 
   end
   
   def find(prefix)
-    @data.select{ |key, value| key =~ /^#{prefix}/ }
+    @entries.select{ |key, value| key =~ /^#{prefix}/ }
   end
   
   def printable
     to_print ||= ""
-    @data.keys.sort.each { |key| to_print << "[#{key}] \"#{@data[key]}\"\n" }   
+    @entries.keys.sort.each { |key| to_print << "[#{key}] \"#{@entries[key]}\"\n" }   
     to_print.strip
   end
 end
