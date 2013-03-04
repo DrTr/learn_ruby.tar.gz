@@ -9,7 +9,6 @@ def shout(word)
 end
 
 def repeat(word, times = 2)
-  word.strip
   ( (word + " ") * times ).strip
 end
 
@@ -18,8 +17,7 @@ def start_of_word(word, count)
 end
 
 def first_word(text)
-  words = text.split
-  words[0]
+  text.split[0]
 end
 
 def titleize(text)
