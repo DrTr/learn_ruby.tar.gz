@@ -1,7 +1,6 @@
 require "time"
 
 class Timer
-  
   attr_accessor :seconds
   
   def initialize
