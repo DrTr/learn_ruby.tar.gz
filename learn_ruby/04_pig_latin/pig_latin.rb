@@ -1,15 +1,9 @@
 module Pig_latin
   VOVELS = ['a','o','y','e','i','u']
   
-  private 
-  def convert(word)
-    
-  end
-  
-  public
   def translate(phrase)
     words = phrase.split
-    pig_phrase ||= ""
+    pig_phrase = ""
     is_capital = is_punct = false
         
     words.each do |word|
