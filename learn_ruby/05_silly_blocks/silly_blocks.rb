@@ -1,12 +1,5 @@
-
 def reverser
-  p = Proc.new do
-    words ||= ""
-    lambda = ->(word){ words << word.reverse! << " " }
-    yield.split.each{ |word| lambda.(word) }
-    return words.strip
-  end
-  p.call
+  yield.split.each{ |x| x.reverse!}.join(' ')
 end
 
 def adder(count = 1)
