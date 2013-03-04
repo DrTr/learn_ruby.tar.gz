@@ -23,12 +23,10 @@ end
 def titleize(text)
   words = text.split
   words[0].capitalize!
-  title = words[0] + " "
   for word in 1...words.size do
     unless LITTLE_WORDS.include? words[word]
       words[word].capitalize!
     end
-    title << words[word] << " "
   end
-  title.strip
+  words.join(" ")
 end
