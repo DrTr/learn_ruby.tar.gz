@@ -13,20 +13,14 @@ class Dictionary
     end
   end
   
-  def keywords
-    @entries.keys.sort
-  end
+  def keywords       @entries.keys.sort;    end
   
-  def include?(key)
-    @entries.include? key 
-  end
+  def include?(key); @entries.include? key; end
   
-  def find(prefix)
-    @entries.select{ |key, value| key =~ /^#{prefix}/ }
-  end
+  def find(prefix);  @entries.select{ |key, value| key =~ /^#{prefix}/ }  end
   
   def printable
-    to_print ||= ""
+    to_print = ""
     @entries.keys.sort.each { |key| to_print << "[#{key}] \"#{@entries[key]}\"\n" }   
     to_print.strip
   end
