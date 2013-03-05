@@ -13,7 +13,7 @@ class Dictionary
     end
   end
   
-  def keywords       @entries.keys.sort;    end
+  def keywords;       @entries.keys.sort;    end
   
   def include?(key); @entries.include? key; end
   
