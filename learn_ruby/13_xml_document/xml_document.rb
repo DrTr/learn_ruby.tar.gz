@@ -18,6 +18,7 @@ class XmlDocument
     define_method(method) { |arg = {}, &block|  send(method, arg, &block) }
   end
   
+  private
   def indent_controller(increase)
      if @is_indents
        increase ? @indent_counter += 2 : (@indent_counter -= 2 if @indent_counter > 0)    
