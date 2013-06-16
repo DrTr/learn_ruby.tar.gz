@@ -84,7 +84,7 @@ describe "#multiply" do
   end
 
   it "multiplies several numbers" do
-    multiply([3,4,5],[1,2]).should == 120
+    multiply(3,4,5,1,2).should == 120
   end
 
 end
