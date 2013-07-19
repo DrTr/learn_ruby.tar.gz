@@ -17,13 +17,14 @@ class Dictionary
   end
   
 	def sort_keys
-		@modified = false
-		@keys = @entries.keys.sort		
+		@modified = true
+		@entries.keys.sort		
 	end
 
   def keywords
-		sort_keys if @modified
-		@keys
+		@keys = sort_keys if @modified
+		#@keys
+		#@entries.keys.sort
   end
   
   def include?(key)
@@ -36,7 +37,7 @@ class Dictionary
   
   def printable
     to_print = ""
-		sort_keys if @modified
+		sort_keys unless @modified
     @keys.each { |key| to_print << "[#{key}] \"#{@entries[key]}\"\n" }   
     to_print.strip
   end

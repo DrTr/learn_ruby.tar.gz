@@ -22,6 +22,8 @@ class Temperature
   end 
 end
 
+puts ftoc(32)
+
 class Celsius < Temperature
   def initialize(degree)
     @data = degree

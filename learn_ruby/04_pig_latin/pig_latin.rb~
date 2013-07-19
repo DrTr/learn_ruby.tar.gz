@@ -1,6 +1,6 @@
 VOVELS = %w(a o y e i u)
-IGNORE = %w(-)
-ONE_TONE = %w(qu sch)
+IGNORE = ['-']
+ONE_TONE = ["qu", "sch"]
   
 def translate(phrase)   
   phrase.split.each do |word|

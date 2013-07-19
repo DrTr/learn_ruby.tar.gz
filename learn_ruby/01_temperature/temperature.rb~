@@ -6,5 +6,5 @@ def ctof(t)
 end
 
 def ftoc(t)
-	(t - TEMP_DIFF) * TEMP_MULT
+	t - TEMP_DIFF * TEMP_MULT
 end
