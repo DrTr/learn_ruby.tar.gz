@@ -8,5 +8,5 @@ def measure(num_trials = 1)
     t2 = Time.now  
     t += t2 - t1
   end
-  return t / num_trials 
+  t / num_trials 
 end

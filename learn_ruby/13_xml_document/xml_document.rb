@@ -1,30 +1,37 @@
 class XmlDocument
-  def initialize(is_indents = false)
+  def initialize(is_indents = false, increment = 2)
     @is_indents = is_indents
     @indent_counter = 0
+    @increment = increment
   end
   
-  def send(name, arg = {}, &block)
+  def send(name, args = {}, &block)
     tag = "<#{name}"
-    tag << " #{arg.keys[0].to_s}=\'#{arg.values[0]}\'" unless arg.size == 0 
-    if block 
-       tag << ">" << indent_controller(true) << "#{yield}</#{name}>" << indent_controller(false)
+    unless args.size == 0
+      args.each{ |key, value| tag << " #{key.to_s}=\'#{value}\'" }
+    end
+    tag << if block
+      ">" + indent(true) + "#{yield}</#{name}>" + indent(false)
     else
-       tag << "/>" << indent_controller(false)
+      "/>" + indent(false)
    end
   end
   
   %w(hello goodbye come_back ok_fine).each do |method|
-    define_method(method) { |arg = {}, &block|  send(method, arg, &block) }
+    define_method(method) { |arg = {}, &block| send(method, arg, &block) }
   end
   
   private
-  def indent_controller(increase)
+  def indent(increase)
      if @is_indents
-       increase ? @indent_counter += 2 : (@indent_counter -= 2 if @indent_counter > 0)    
-       "\n" + (" " * @indent_counter) 
+       @indent_counter += if increase 
+         @increment
+       else
+         @indent_counter == 0 ?  0 : -@increment
+       end
+       "\n" + (" " * @indent_counter)
      else
        ""
      end
-  end  
+  end
 end

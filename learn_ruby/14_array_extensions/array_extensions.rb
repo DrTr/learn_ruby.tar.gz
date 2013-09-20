@@ -4,10 +4,10 @@ class Array
   end
   
   def square
-	  self.map{ |x| x*x }
+    self.map{ |x| x * x }
   end
   
-	def square!
- 		self.map!{ |x| x*x }
-	end
+  def square!
+    self.map!{ |x| x * x }
+  end
 end

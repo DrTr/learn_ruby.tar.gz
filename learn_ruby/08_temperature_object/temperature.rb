@@ -1,7 +1,8 @@
-require "./temperature_01"  
+require_relative "../01_temperature/temperature.rb"  
+
 class Temperature
 
-	def initialize (options= [])
+  def initialize (options= [])
     @data = options 
   end
   
@@ -14,11 +15,11 @@ class Temperature
   end
   
   def self.from_celsius(degree)
-    class_eval "Temperature.new(:c => #{degree})"
+    Temperature.new(c: degree)
   end
   
   def self.from_fahrenheit(degree)
-    class_eval "Temperature.new(:f => #{degree})"
+    Temperature.new(f: degree)
   end 
 end
 
@@ -37,7 +38,7 @@ class Celsius < Temperature
 end
   
 class Fahrenheit < Temperature
-    def initialize(degree)
+  def initialize(degree)
     @data = degree
   end
   

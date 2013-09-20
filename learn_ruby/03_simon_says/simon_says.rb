@@ -24,9 +24,7 @@ def titleize(text)
   words = text.split
   words[0].capitalize!
   for word in 1...words.size do
-    unless LITTLE_WORDS.include? words[word]
-      words[word].capitalize!
-    end
+    words[word].capitalize! unless LITTLE_WORDS.include? words[word]
   end
   words.join(" ")
 end

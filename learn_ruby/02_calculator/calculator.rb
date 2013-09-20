@@ -11,7 +11,7 @@ def sum(array)
 end
 
 def multiply(*numbers)
-	numbers.inject(:*) || 0
+  numbers.inject(:*) || 0
 end
 
 def power(num, power)
@@ -19,6 +19,6 @@ def power(num, power)
 end
 
 def factorial(n)
-	raise ArgumentError if n < 0 
+  raise ArgumentError if n < 0 
   (1..n).inject(:*) || 1
 end

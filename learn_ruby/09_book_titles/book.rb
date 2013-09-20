@@ -4,7 +4,7 @@ class Book
   
   def title=(text)
     @title = text.split.each do |word|
-       word.capitalize! unless @@LITTLE_WORDS.include? word
+      word.capitalize! unless @@LITTLE_WORDS.include? word
     end.join(" ")
     @title[0] = @title[0].upcase
   end

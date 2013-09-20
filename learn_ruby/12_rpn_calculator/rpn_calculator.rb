@@ -31,11 +31,11 @@ class RPNCalculator
   end
   
   def evaluate(str)
-		rpn_eval = RPNCalculator.new
+    rpn_eval = RPNCalculator.new
     tokens(str).each do |x|
-			(x.is_a? Integer) ? rpn_eval.push(x) : rpn_eval.do_operator(x)
-		end
-		rpn_eval.value
+      (x.is_a? Integer) ? rpn_eval.push(x) : rpn_eval.do_operator(x)
+    end
+    rpn_eval.value
   end
   
   def do_operator(operator_type)
